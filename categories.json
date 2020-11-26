@@ -1,0 +1,161 @@
+[{
+        "categorie": "main",
+        "name": "Animal I",
+        "img": "assets/images/animals_1.gif"
+    },
+    {
+        "categorie": "main",
+        "name": "Animal II",
+        "img": "assets/images/animals_2.gif"
+    },
+    {
+        "categorie": "main",
+        "name": "Professions",
+        "img": "assets/images/professions.gif"
+    },
+    {
+        "categorie": "main",
+        "name": "Clothes",
+        "img": "assets/images/clothes.gif"
+    },
+    {
+        "categorie": "main",
+        "name": "Emotions",
+        "img": "assets/images/emotions.gif"
+    },
+    {
+        "categorie": "main",
+        "name": "Body parts",
+        "img": "assets/images/body_parts.gif"
+    },
+    {
+        "categorie": "main",
+        "name": "Months",
+        "img": "assets/images/months.gif"
+    },
+    {
+        "categorie": "main",
+        "name": "Family",
+        "img": "assets/images/family.gif"
+    },
+    {
+        "categorie": "animal 1",
+        "name": "lion",
+        "img": "assets/images/lion.gif"
+    },
+    {
+        "categorie": "animal 1",
+        "name": "zebra",
+        "img": "assets/images/zebra.gif"
+    },
+    {
+        "categorie": "animal 1",
+        "name": "giraffe",
+        "img": "assets/images/giraffe.gif"
+    },
+    {
+        "categorie": "animal 1",
+        "name": "hippo",
+        "img": "assets/images/hippo.gif"
+    },
+    {
+        "categorie": "animal 1",
+        "name": "lemur",
+        "img": "assets/images/lemur.gif"
+    },
+    {
+        "categorie": "animal 1",
+        "name": "penguin",
+        "img": "assets/images/penguin.gif"
+    },
+    {
+        "categorie": "animal 1",
+        "name": "monkey",
+        "img": "assets/images/monkey.gif"
+    },
+    {
+        "categorie": "animal 1",
+        "name": "tiger",
+        "img": "assets/images/tiger.gif"
+    },
+    {
+        "categorie": "animal 2",
+        "name": "rabbit",
+        "img": "assets/images/rabbit.gif"
+    },
+    {
+        "categorie": "animal 2",
+        "name": "fox",
+        "img": "assets/images/fox.gif"
+    },
+    {
+        "categorie": "animal 2",
+        "name": "leopard",
+        "img": "assets/images/leopard.gif"
+    },
+    {
+        "categorie": "animal 2",
+        "name": "sloth",
+        "img": "assets/images/sloth.gif"
+    },
+    {
+        "categorie": "animal 2",
+        "name": "wolf",
+        "img": "assets/images/wolf.gif"
+    },
+    {
+        "categorie": "animal 2",
+        "name": "dog",
+        "img": "assets/images/dog.gif"
+    },
+    {
+        "categorie": "animal 2",
+        "name": "cat",
+        "img": "assets/images/cat.gif"
+    },
+    {
+        "categorie": "animal 2",
+        "name": "pig",
+        "img": "assets/images/pig.gif"
+    },
+    {
+        "categorie": "professions",
+        "name": "teacher",
+        "img": "assets/images/teacher.gif"
+    },
+    {
+        "categorie": "professions",
+        "name": "doctor",
+        "img": "assets/images/doctor.gif"
+    },
+    {
+        "categorie": "professions",
+        "name": "policeman",
+        "img": "assets/images/policeman.gif"
+    },
+    {
+        "categorie": "professions",
+        "name": "seller",
+        "img": "assets/images/seller.gif"
+    },
+    {
+        "categorie": "professions",
+        "name": "cook",
+        "img": "assets/images/cook.gif"
+    },
+    {
+        "categorie": "professions",
+        "name": "scientist",
+        "img": "assets/images/scientist.gif"
+    },
+    {
+        "categorie": "professions",
+        "name": "journalist",
+        "img": "assets/images/journalist.gif"
+    },
+    {
+        "categorie": "professions",
+        "name": "writer",
+        "img": "assets/images/writer.gif"
+    }
+]
