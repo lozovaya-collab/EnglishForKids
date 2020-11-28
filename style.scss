@@ -9,6 +9,30 @@
         align-items: center;
     }
     
+    .scene {
+        width: 360px;
+        height: 270px;
+        perspective: 600px;
+        margin-top: 60px;
+    }
+    
+    .card.is-flipped {
+        transform: rotateY(180deg);
+    }
+    
+    .box_of_cards__card--back {
+        transform: rotateY(180deg);
+    }
+    
+    .card {
+        width: 100%;
+        height: 100%;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+        position: relative;
+    }
+    
     .box_of_cards {
         display: flex;
         flex-wrap: wrap;
