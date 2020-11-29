@@ -117,9 +117,6 @@ fetch('/categories.json').then(res => res.json()).then(list => {
     }
 
     modeSwitchButton.addEventListener('click', () => {
-
-
-
         if (!modeGame) {
             createCardsForGame(categories, nameOfcategorie)
             btnStart.innerHTML = 'Start game'
@@ -165,9 +162,7 @@ fetch('/categories.json').then(res => res.json()).then(list => {
             functionsOnCards()
 
             modeGame = false
-
         }
-
     })
 })
 
