@@ -1,9 +1,17 @@
 let categories = []
-let animals_1 = []
+
 let nameOfcategorie = 'main'
 const boxOfCards = document.querySelector('.box_of_cards')
 let cards = document.querySelectorAll('.box_of_cards__card')
+const header = document.querySelector('.header')
 
+let modeGame = false
+
+const btnStart = document.createElement('button')
+btnStart.className = 'button__start_game'
+
+const body = document.querySelector('.main')
+const modeSwitchButton = document.querySelector('.slider')
 let request = new XMLHttpRequest()
 
 request.open('GET', './categories.json')
@@ -87,6 +95,7 @@ fetch('/categories.json').then(res => res.json()).then(list => {
 
                 click(linkToCateg)
                 functionsOnCards()
+
             });
         }
     })
@@ -103,9 +112,63 @@ fetch('/categories.json').then(res => res.json()).then(list => {
 
             click(linkToCateg)
             functionsOnCards()
+
         });
     }
 
+    modeSwitchButton.addEventListener('click', () => {
+
+
+
+        if (!modeGame) {
+            createCardsForGame(categories, nameOfcategorie)
+            btnStart.innerHTML = 'Start game'
+            body.appendChild(btnStart)
+            modeGame = true
+        } else if (modeGame) {
+            console.log('aa')
+            header.innerHTML = `
+            <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="main_page">Main page</a>
+                    </li>
+                    <li>
+                        <a class="animal_1">Animals 1</a>
+                    </li>
+                    <li>
+                        <a class="animal_2">Animals 2</a>
+                    </li>
+                    <li>
+                        <a class="professions">Professions</a>
+                    </li>
+                    <li>
+                        <a class="clothes">Clothes</a>
+                    </li>
+                    <li>
+                        <a class="emotions">Emotions</a>
+                    </li>
+                    <li>
+                        <a class="body_parts">Body parts</a>
+                    </li>
+                    <li>
+                        <a class="colors">Colors</a>
+                    </li>
+                    <li>
+                        <a class="family">Family</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>`
+            click(nameOfcategorie)
+            functionsOnCards()
+
+            modeGame = false
+
+        }
+
+    })
 })
 
 
@@ -117,13 +180,56 @@ function click(name) {
     console.log(cards)
 }
 
+function createCardsForGame(array, name) {
 
+
+    boxOfCards.innerHTML = ''
+    header.innerHTML = ''
+    boxOfCards.innerHTML += createCards(array, name)
+
+
+}
 
 function createCategoriesOrWords(array, name) {
     let arrayOfInfo = array
     boxOfCards.innerHTML = ''
     boxOfCards.innerHTML += createCategorieOrWord(arrayOfInfo, name)
+
     cards = boxOfCards.children
+}
+
+function createCards(array, name) {
+    console.log(array)
+    console.log(name)
+    let str = ''
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].categorie == name && name === 'main') {
+            str = str + `
+            <div class="scene scene--card">
+                <div class="card">
+                    <div class="box_of_cards__card box_of_cards__card--front">
+                        <img class="box_of_cards__card__image" alt="" src="${array[i].img}">
+                        <h2 class="animal_1">${array[i].name}</h2>  
+                    </div>
+                </div>
+            </div>`
+        } else if (array[i].categorie == name) {
+            str = str + `
+            <div class="scene scene--card">
+                <div class="card">
+                    <div class="box_of_cards__card box_of_cards__card--front">
+                        <img class="card_image__for_game" alt="" src="${array[i].img}">
+                        <audio data-key="sound_${array[i].name}" src="${array[i].sound}"></audio>
+                    </div>
+                    
+                </div>
+            </div>`
+        }
+    }
+
+
+
+    return str
 }
 
 function createCategorieOrWord(array, name) {
@@ -137,7 +243,7 @@ function createCategorieOrWord(array, name) {
                     <div class="box_of_cards__card box_of_cards__card--front">
                         <img class="box_of_cards__card__image" alt="" src="${array[i].img}">
                         <h2 class="animal_1">${array[i].name}</h2>
-                        <audio data-key="sound_${array[i].name}" src="${array[i].sound}"></audio>
+                        
                     </div>
                 </div>
             </div>`
@@ -200,4 +306,5 @@ function functionsOnCards() {
         })
     }
 }
+
 request.send()
