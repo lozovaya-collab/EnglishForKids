@@ -116,7 +116,8 @@ fetch('/categories.json').then(res => res.json()).then(list => {
 
         });
     }
-
+    const arrayOfWords = []
+    let index = 0
     modeSwitchButton.addEventListener('click', () => {
         if (!modeGame) {
             createCardsForGame(categories, nameOfcategorie)
@@ -132,6 +133,61 @@ fetch('/categories.json').then(res => res.json()).then(list => {
             body.removeChild(btnStart)
             modeGame = false
         }
+        for (let i = 0; i < categories.length; i++) {
+            if (nameOfcategorie === categories[i].categorie) {
+
+                arrayOfWords.push(categories[i].name)
+            }
+        }
+        arrayOfWords.sort(makeRandomArr)
+        console.log(arrayOfWords)
+    })
+
+    btnStart.addEventListener('click', () => {
+
+        if (index === 0) {
+            soundTurnOn(arrayOfWords[index])
+        }
+        for (let i = 0; i < cards.length; i++) {
+
+            cards[i].addEventListener('click', () => {
+                let soundName = cards[i].children[0].children[0].children[1].dataset.key
+                console.log(index)
+                let str = `sound_${arrayOfWords[index]}`
+                console.log(str)
+                console.log(soundName)
+                if (soundName == `sound_${arrayOfWords[index]}`) {
+                    console.log(soundName)
+                    let audio = document.querySelector(`audio[data-key="sound_correct"]`);
+                    console.log(audio)
+                    audio.currentTime = 0;
+                    audio.play();
+                    index += 1
+                    if (index === 8) {
+
+                        setTimeout(() => {
+                            let audio = document.querySelector(`audio[data-key="sound_win"]`);
+                            console.log(audio)
+                            audio.currentTime = 0;
+                            audio.play();
+                            alert('игра окончена')
+                        }, 2000);
+                    } else {
+
+                        setTimeout(() => soundTurnOn(arrayOfWords[index]), 2000);
+
+                    }
+
+                } else {
+                    let audio = document.querySelector(`audio[data-key="sound_error"]`);
+                    console.log(audio)
+                    audio.currentTime = 0;
+                    audio.play();
+                }
+
+            })
+        }
+
     })
 })
 
@@ -145,13 +201,8 @@ function click(name) {
 }
 
 function createCardsForGame(array, name) {
-
-
     boxOfCards.innerHTML = ''
-
     boxOfCards.innerHTML += createCards(array, name)
-
-
 }
 
 function createCategoriesOrWords(array, name) {
@@ -271,4 +322,7 @@ function functionsOnCards() {
     }
 }
 
+function makeRandomArr(a, b) {
+    return Math.random() - 0.5;
+}
 request.send()
