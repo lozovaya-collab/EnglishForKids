@@ -11,6 +11,7 @@ const btnStart = document.createElement('button')
 btnStart.className = 'button__start_game'
 
 const body = document.querySelector('.main')
+
 const modeSwitchButton = document.querySelector('.slider')
 let request = new XMLHttpRequest()
 
@@ -124,43 +125,11 @@ fetch('/categories.json').then(res => res.json()).then(list => {
             modeGame = true
         } else if (modeGame) {
             console.log('aa')
-            header.innerHTML = `
-            <div>
-            <nav>
-                <ul>
-                    <li>
-                        <a class="main_page">Main page</a>
-                    </li>
-                    <li>
-                        <a class="animal_1">Animals 1</a>
-                    </li>
-                    <li>
-                        <a class="animal_2">Animals 2</a>
-                    </li>
-                    <li>
-                        <a class="professions">Professions</a>
-                    </li>
-                    <li>
-                        <a class="clothes">Clothes</a>
-                    </li>
-                    <li>
-                        <a class="emotions">Emotions</a>
-                    </li>
-                    <li>
-                        <a class="body_parts">Body parts</a>
-                    </li>
-                    <li>
-                        <a class="colors">Colors</a>
-                    </li>
-                    <li>
-                        <a class="family">Family</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>`
+
+
             click(nameOfcategorie)
             functionsOnCards()
-
+            body.removeChild(btnStart)
             modeGame = false
         }
     })
@@ -179,7 +148,7 @@ function createCardsForGame(array, name) {
 
 
     boxOfCards.innerHTML = ''
-    header.innerHTML = ''
+
     boxOfCards.innerHTML += createCards(array, name)
 
 
