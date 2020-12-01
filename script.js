@@ -144,49 +144,79 @@ fetch('/categories.json').then(res => res.json()).then(list => {
     })
 
     btnStart.addEventListener('click', () => {
-
-        if (index === 0) {
+        let Reapet = false
+        if (btnStart.innerHTML === 'Reapet') {
+            Reapet = true
             soundTurnOn(arrayOfWords[index])
-        }
-        for (let i = 0; i < cards.length; i++) {
+        } else {
+            btnStart.innerHTML = 'Reapet'
+            if (index === 0) {
+                soundTurnOn(arrayOfWords[index])
+            }
+            for (let i = 0; i < cards.length; i++) {
 
-            cards[i].addEventListener('click', () => {
-                let soundName = cards[i].children[0].children[0].children[1].dataset.key
-                console.log(index)
-                let str = `sound_${arrayOfWords[index]}`
-                console.log(str)
-                console.log(soundName)
-                if (soundName == `sound_${arrayOfWords[index]}`) {
+                cards[i].children[0].children[0].addEventListener('click', () => {
+
+                    let currentCard = cards[i].children[0].children[0]
+                    let soundName = currentCard.children[1].dataset.key
+                    console.log(index)
+                    let str = `sound_${arrayOfWords[index]}`
+                    console.log(str)
                     console.log(soundName)
-                    let audio = document.querySelector(`audio[data-key="sound_correct"]`);
-                    console.log(audio)
-                    audio.currentTime = 0;
-                    audio.play();
-                    index += 1
-                    if (index === 8) {
 
-                        setTimeout(() => {
-                            let audio = document.querySelector(`audio[data-key="sound_win"]`);
+                    if (soundName == `sound_${arrayOfWords[index]}`) {
+                        console.log(soundName)
+                        let audio = document.querySelector(`audio[data-key="sound_correct"]`);
+                        console.log(audio)
+                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+                        currentCard.children[0].className = 'card_image__for_game__disabled'
+                        currentCard.style.cursor = 'default'
+                        audio.currentTime = 0;
+
+                        audio.play();
+
+                        index += 1
+
+                        if (index === 8) {
+
+                            setTimeout(() => {
+                                let audio = document.querySelector(`audio[data-key="sound_win"]`);
+                                console.log(audio)
+
+                                audio.currentTime = 0;
+                                audio.play();
+                                index = 0
+                                alert('игра окончена')
+                                for (let j = 0; j < cards.length; j++) {
+                                    cards[j].children[0].children[0].children[0].className = 'card_image__for_game'
+                                    cards[j].children[0].children[0].style.cursor = 'pointer'
+                                }
+                            }, 2000);
+                            arrayOfWords.sort(makeRandomArr)
+
+                            btnStart.innerHTML = 'Start game'
+                        } else {
+                            setTimeout(() => soundTurnOn(arrayOfWords[index]), 2000);
+
+                        }
+
+                    } else {
+
+                        console.log(currentCard.children[0].className);
+                        console.log('aaaaaaaвввввввввввввввввaaaaaaaaaaaaaa');
+                        if (currentCard.children[0].className !== 'card_image__for_game__disabled') {
+                            let audio = document.querySelector(`audio[data-key="sound_error"]`);
                             console.log(audio)
                             audio.currentTime = 0;
                             audio.play();
-                            alert('игра окончена')
-                        }, 2000);
-                    } else {
-
-                        setTimeout(() => soundTurnOn(arrayOfWords[index]), 2000);
+                        }
 
                     }
 
-                } else {
-                    let audio = document.querySelector(`audio[data-key="sound_error"]`);
-                    console.log(audio)
-                    audio.currentTime = 0;
-                    audio.play();
-                }
-
-            })
+                })
+            }
         }
+
 
     })
 })
@@ -196,6 +226,7 @@ function click(name) {
     boxOfCards.innerHTML = ''
 
     createCategoriesOrWords(categories, name)
+        // @ts-ignore
     cards = boxOfCards.children
     console.log(cards)
 }
@@ -210,6 +241,7 @@ function createCategoriesOrWords(array, name) {
     boxOfCards.innerHTML = ''
     boxOfCards.innerHTML += createCategorieOrWord(arrayOfInfo, name)
 
+    // @ts-ignore
     cards = boxOfCards.children
 }
 

@@ -1,59 +1,141 @@
-    body {
-        padding: 0;
-        margin: 0;
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-bottom: 20px;
+    & input {
+        display: none;
     }
-    
-    .wrapper {
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    &:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+    &:before {
+        border-radius: 50%;
+    }
+}
+
+.wrapper {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-top: -20px;
+    margin-bottom: 60px;
+}
+
+.scene {
+    width: 360px;
+    height: 270px;
+    perspective: 600px;
+    margin-top: 30px;
+}
+
+.box_of_cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 20px;
+    &__card {
+        position: absolute;
+        margin: 50px;
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
         justify-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
-    }
-    
-    .scene {
-        width: 360px;
+        border: 1px solid black;
+        width: 260px;
         height: 270px;
-        perspective: 600px;
-        margin-top: 60px;
-    }
-    
-    .card.is-flipped {
-        transform: rotateY(180deg);
-    }
-    
-    .box_of_cards__card--back {
-        transform: rotateY(180deg);
-    }
-    
-    .card {
-        width: 100%;
-        height: 100%;
-        transition: transform 1s;
-        transform-style: preserve-3d;
-        cursor: pointer;
-        position: relative;
-    }
-    
-    .box_of_cards {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        &__card {
-            margin: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-items: center;
-            align-items: center;
-            border: 1px solid black;
-            width: 260px;
-            height: 270px;
-            &__image {
-                width: 100%;
-                height: 50%;
-            }
+        backface-visibility: hidden;
+        &--back {
+            transform: rotateY(180deg);
+        }
+        &__image {
+            width: 100%;
+            height: 50%;
         }
     }
-    
-    .translate {
-        width: 50px;
-        height: 50px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    &.is-flipped {
+        transform: rotateY(180deg);
     }
+}
+
+.translate {
+    width: 50px;
+    height: 50px;
+}
+
+.card_image__for_game {
+    width: 100%;
+    height: 65%;
+    &__disabled {
+        opacity: 0.5;
+        width: 100%;
+        height: 65%;
+    }
+}
