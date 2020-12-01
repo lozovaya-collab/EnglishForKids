@@ -147,3 +147,26 @@ input:checked+.slider:before {
     width: 100%;
     height: 65%;
 }
+
+.button__start_game {
+    padding: 5px;
+    margin: 20px;
+}
+
+.negative .fa-star {
+    color: rgb(241, 124, 89);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.pozitive .fa-star {
+    color: rgb(226, 241, 89);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.the__end {
+    width: 70%;
+    height: 100%;
+    margin: 50px;
+}

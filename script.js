@@ -1,10 +1,13 @@
 let categories = []
 
 let nameOfcategorie = 'main'
+const wrapper = document.querySelector('.main')
 const boxOfCards = document.querySelector('.box_of_cards')
 let cards = document.querySelectorAll('.box_of_cards__card')
 const header = document.querySelector('.header')
 
+let errorAnswers = 0
+let correctAnswers = 0
 let modeGame = false
 
 const btnStart = document.createElement('button')
@@ -122,6 +125,7 @@ fetch('/categories.json').then(res => res.json()).then(list => {
         if (!modeGame) {
             createCardsForGame(categories, nameOfcategorie)
             btnStart.innerHTML = 'Start game'
+            btnStart.className = 'button__start_game'
             body.appendChild(btnStart)
             modeGame = true
         } else if (modeGame) {
@@ -171,6 +175,11 @@ fetch('/categories.json').then(res => res.json()).then(list => {
                         console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
                         currentCard.children[0].className = 'card_image__for_game__disabled'
                         currentCard.style.cursor = 'default'
+                        const star = document.createElement('i')
+                        star.className = 'fas fa-star'
+                        const pozitivePanel = document.querySelector('.pozitive')
+                        correctAnswers += 1
+                        pozitivePanel.prepend(star)
                         audio.currentTime = 0;
 
                         audio.play();
@@ -187,14 +196,27 @@ fetch('/categories.json').then(res => res.json()).then(list => {
                                 audio.play();
                                 index = 0
                                 alert('игра окончена')
-                                for (let j = 0; j < cards.length; j++) {
-                                    cards[j].children[0].children[0].children[0].className = 'card_image__for_game'
-                                    cards[j].children[0].children[0].style.cursor = 'pointer'
-                                }
-                            }, 2000);
-                            arrayOfWords.sort(makeRandomArr)
+                                wrapper.innerHTML = ''
 
-                            btnStart.innerHTML = 'Start game'
+                                const image = document.createElement('img')
+                                let result
+                                console.log(errorAnswers);
+                                console.log(correctAnswers);
+                                if (errorAnswers === 0) {
+                                    result = 'win'
+                                } else if (errorAnswers > 0) {
+                                    result = 'loser'
+                                }
+                                image.src = `assets/images/${result}.gif`
+                                image.className = 'the__end'
+                                wrapper.appendChild(image)
+
+
+                                correctAnswers = 0
+                                errorAnswers = 0
+                            }, 2000);
+
+
                         } else {
                             setTimeout(() => soundTurnOn(arrayOfWords[index]), 2000);
 
@@ -205,6 +227,11 @@ fetch('/categories.json').then(res => res.json()).then(list => {
                         console.log(currentCard.children[0].className);
                         console.log('aaaaaaaвввввввввввввввввaaaaaaaaaaaaaa');
                         if (currentCard.children[0].className !== 'card_image__for_game__disabled') {
+                            const star = document.createElement('i')
+                            star.className = 'fas fa-star'
+                            const negativePanel = document.querySelector('.negative')
+                            errorAnswers += 1
+                            negativePanel.prepend(star)
                             let audio = document.querySelector(`audio[data-key="sound_error"]`);
                             console.log(audio)
                             audio.currentTime = 0;
