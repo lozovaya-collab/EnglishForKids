@@ -42,6 +42,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
 
         functionsOnCards()
         if (modeGame) {
+            arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
                 if (nameOfcategorie === categories[i].categorie) {
                     arrayOfWords.push(categories[i].name)
@@ -56,6 +57,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         click(nameOfcategorie)
         functionsOnCards()
         if (modeGame) {
+            arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
                 if (nameOfcategorie === categories[i].categorie) {
                     arrayOfWords.push(categories[i].name)
@@ -70,6 +72,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         click(nameOfcategorie)
         functionsOnCards()
         if (modeGame) {
+            arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
                 if (nameOfcategorie === categories[i].categorie) {
                     arrayOfWords.push(categories[i].name)
@@ -86,6 +89,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         click(nameOfcategorie)
         functionsOnCards()
         if (modeGame) {
+            arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
                 if (nameOfcategorie === categories[i].categorie) {
                     arrayOfWords.push(categories[i].name)
@@ -101,6 +105,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         click(nameOfcategorie)
         functionsOnCards()
         if (modeGame) {
+            arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
                 if (nameOfcategorie === categories[i].categorie) {
                     arrayOfWords.push(categories[i].name)
@@ -116,6 +121,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         click(nameOfcategorie)
         functionsOnCards()
         if (modeGame) {
+            arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
                 if (nameOfcategorie === categories[i].categorie) {
                     arrayOfWords.push(categories[i].name)
@@ -131,6 +137,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         click(nameOfcategorie)
         functionsOnCards()
         if (modeGame) {
+            arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
                 if (nameOfcategorie === categories[i].categorie) {
                     arrayOfWords.push(categories[i].name)
@@ -145,6 +152,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         click(nameOfcategorie)
         functionsOnCards()
         if (modeGame) {
+            arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
                 if (nameOfcategorie === categories[i].categorie) {
                     arrayOfWords.push(categories[i].name)
@@ -172,7 +180,14 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                 nameOfcategorie = linkToCateg
                 click(nameOfcategorie)
                 functionsOnCards()
-
+                arrayOfWords = []
+                for (let i = 0; i < categories.length; i++) {
+                    if (nameOfcategorie === categories[i].categorie) {
+                        arrayOfWords.push(categories[i].name)
+                    }
+                }
+                arrayOfWords.sort(makeRandomArr)
+                console.log(arrayOfWords)
             });
         }
     })
@@ -190,10 +205,17 @@ fetch('./categories.json').then(res => res.json()).then(list => {
             nameOfcategorie = linkToCateg
             click(nameOfcategorie)
             functionsOnCards()
-
+            arrayOfWords = []
+            for (let i = 0; i < categories.length; i++) {
+                if (nameOfcategorie === categories[i].categorie) {
+                    arrayOfWords.push(categories[i].name)
+                }
+            }
+            arrayOfWords.sort(makeRandomArr)
+            console.log(arrayOfWords)
         });
     }
-    const arrayOfWords = []
+    let arrayOfWords = []
     let index = 0
     modeSwitchButton.addEventListener('click', () => {
 
@@ -215,6 +237,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                         nameOfcategorie = linkToCateg
                         click(nameOfcategorie)
                         functionsOnCards()
+                        arrayOfWords = []
                         for (let i = 0; i < categories.length; i++) {
                             if (nameOfcategorie === categories[i].categorie) {
                                 arrayOfWords.push(categories[i].name)
@@ -229,6 +252,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                 btnStart.innerHTML = 'Start game'
                 btnStart.className = 'button__start_game'
                 body.appendChild(btnStart)
+                arrayOfWords = []
                 for (let i = 0; i < categories.length; i++) {
                     if (nameOfcategorie === categories[i].categorie) {
                         arrayOfWords.push(categories[i].name)
@@ -242,15 +266,49 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         } else if (modeGame) {
             console.log('aa')
             modeGame = false
-            click(nameOfcategorie)
-            functionsOnCards()
-            body.removeChild(btnStart)
-        }
 
+            body.removeChild(btnStart)
+            if (nameOfcategorie === 'main') {
+                click(nameOfcategorie)
+                for (let i = 0; i < cards.length; i++) {
+                    cards[i].addEventListener('click', function() {
+
+                        let linkToCateg = cards[i].children[0].children[0].children[1].innerHTML.toLowerCase()
+
+                        if (linkToCateg === 'animal i') {
+                            linkToCateg = 'animal 1'
+                        } else if (linkToCateg === 'animal ii') {
+                            linkToCateg = 'animal 2'
+                        }
+                        console.log(linkToCateg)
+                        nameOfcategorie = linkToCateg
+                        click(nameOfcategorie)
+                        functionsOnCards()
+                        arrayOfWords = []
+                        for (let i = 0; i < categories.length; i++) {
+                            if (nameOfcategorie === categories[i].categorie) {
+                                arrayOfWords.push(categories[i].name)
+                            }
+                        }
+                        arrayOfWords.sort(makeRandomArr)
+                        console.log(arrayOfWords)
+                    });
+                }
+            } else {
+                click(nameOfcategorie)
+                functionsOnCards()
+            }
+        }
 
     })
 
     btnStart.addEventListener('click', () => {
+        const negPanel = document.createElement('div')
+        const pozPanel = document.createElement('div')
+        negPanel.className = 'negative'
+        pozPanel.className = 'pozitive'
+        main.appendChild(negPanel)
+        main.appendChild(pozPanel)
         let Reapet = false
         if (btnStart.innerHTML === 'Reapet') {
             Reapet = true
@@ -293,12 +351,15 @@ fetch('./categories.json').then(res => res.json()).then(list => {
 
                             setTimeout(() => {
                                 let result
+                                let message = ''
                                 console.log(errorAnswers);
                                 console.log(correctAnswers);
                                 if (errorAnswers === 0) {
                                     result = 'win'
+                                    message = 'Great job!'
                                 } else if (errorAnswers > 0) {
                                     result = 'loser'
+                                    message = `Fail! Errors: ${errorAnswers}`
                                 }
                                 let audio = document.querySelector(`audio[data-key="sound_${result}"]`);
                                 console.log(audio)
@@ -311,6 +372,8 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                                 boxOfCards = document.createElement('div')
                                 boxOfCards.className = 'box_of_cards'
                                 const image = document.createElement('img')
+                                const h2 = document.createElement('h2')
+                                h2.innerHTML = message
                                 image.src = `assets/images/${result}.png`
                                 image.className = 'the__end'
                                 const negative = document.querySelector('.negative')
@@ -318,14 +381,9 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                                 wrapper.appendChild(boxOfCards)
                                 main.removeChild(negative)
                                 main.removeChild(pozitive)
+                                boxOfCards.appendChild(h2)
                                 boxOfCards.appendChild(image)
                                 main.removeChild(btnStart)
-
-
-
-
-
-
                                 correctAnswers = 0
                                 errorAnswers = 0
 
@@ -344,13 +402,21 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                                                 linkToCateg = 'animal 2'
                                             }
                                             console.log(linkToCateg)
-
-                                            click(linkToCateg)
+                                            nameOfcategorie = linkToCateg
+                                            click(nameOfcategorie)
                                             functionsOnCards()
+                                            arrayOfWords = []
+                                            for (let i = 0; i < categories.length; i++) {
+                                                if (nameOfcategorie === categories[i].categorie) {
+                                                    arrayOfWords.push(categories[i].name)
+                                                }
+                                            }
+                                            arrayOfWords.sort(makeRandomArr)
+                                            console.log(arrayOfWords)
 
                                         });
                                     }
-                                }, 1000)
+                                }, 5000)
 
 
 
@@ -371,6 +437,9 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                             star.className = 'fas fa-star'
                             const negativePanel = document.querySelector('.negative')
                             errorAnswers += 1
+                            if (errorAnswers % 10 === 0) {
+                                negativePanel.innerHTML = ''
+                            }
                             negativePanel.prepend(star)
                             let audio = document.querySelector(`audio[data-key="sound_error"]`);
                             console.log(audio)

@@ -165,6 +165,11 @@ input:checked+.slider:before {
     margin-right: 5px;
 }
 
+.pozitive,
+.negative {
+    margin: 10px;
+}
+
 .the__end {
     margin: 50px;
 }
