@@ -31,7 +31,7 @@ const linkMain = document.querySelector('.main_page')
 const linkColors = document.querySelector('.colors')
 const linkFamily = document.querySelector('.family')
 
-fetch('/categories.json').then(res => res.json()).then(list => {
+fetch('./categories.json').then(res => res.json()).then(list => {
     categories = list
 
     createCategoriesOrWords(categories, nameOfcategorie)
