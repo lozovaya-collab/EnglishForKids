@@ -166,7 +166,5 @@ input:checked+.slider:before {
 }
 
 .the__end {
-    width: 70%;
-    height: 100%;
     margin: 50px;
 }

@@ -1,8 +1,9 @@
 let categories = []
 
 let nameOfcategorie = 'main'
-const wrapper = document.querySelector('.main')
-const boxOfCards = document.querySelector('.box_of_cards')
+const wrapper = document.querySelector('.wrapper')
+const main = document.querySelector('.main')
+let boxOfCards = document.querySelector('.box_of_cards')
 let cards = document.querySelectorAll('.box_of_cards__card')
 const header = document.querySelector('.header')
 
@@ -40,16 +41,43 @@ fetch('/categories.json').then(res => res.json()).then(list => {
         click(nameOfcategorie)
 
         functionsOnCards()
+        if (modeGame) {
+            for (let i = 0; i < categories.length; i++) {
+                if (nameOfcategorie === categories[i].categorie) {
+                    arrayOfWords.push(categories[i].name)
+                }
+            }
+            arrayOfWords.sort(makeRandomArr)
+            console.log(arrayOfWords)
+        }
     })
     linkAnimal2.addEventListener('click', () => {
         nameOfcategorie = "animal 2"
         click(nameOfcategorie)
         functionsOnCards()
+        if (modeGame) {
+            for (let i = 0; i < categories.length; i++) {
+                if (nameOfcategorie === categories[i].categorie) {
+                    arrayOfWords.push(categories[i].name)
+                }
+            }
+            arrayOfWords.sort(makeRandomArr)
+            console.log(arrayOfWords)
+        }
     })
     linkProfessions.addEventListener('click', () => {
         nameOfcategorie = "professions"
         click(nameOfcategorie)
         functionsOnCards()
+        if (modeGame) {
+            for (let i = 0; i < categories.length; i++) {
+                if (nameOfcategorie === categories[i].categorie) {
+                    arrayOfWords.push(categories[i].name)
+                }
+            }
+            arrayOfWords.sort(makeRandomArr)
+            console.log(arrayOfWords)
+        }
     })
 
     linkClothes.addEventListener('click', () => {
@@ -57,29 +85,74 @@ fetch('/categories.json').then(res => res.json()).then(list => {
         nameOfcategorie = "clothes"
         click(nameOfcategorie)
         functionsOnCards()
+        if (modeGame) {
+            for (let i = 0; i < categories.length; i++) {
+                if (nameOfcategorie === categories[i].categorie) {
+                    arrayOfWords.push(categories[i].name)
+                }
+            }
+            arrayOfWords.sort(makeRandomArr)
+            console.log(arrayOfWords)
+        }
     })
 
     linkEmotions.addEventListener('click', () => {
         nameOfcategorie = "emotions"
         click(nameOfcategorie)
         functionsOnCards()
+        if (modeGame) {
+            for (let i = 0; i < categories.length; i++) {
+                if (nameOfcategorie === categories[i].categorie) {
+                    arrayOfWords.push(categories[i].name)
+                }
+            }
+            arrayOfWords.sort(makeRandomArr)
+            console.log(arrayOfWords)
+        }
     })
 
     linkBodyParts.addEventListener('click', () => {
         nameOfcategorie = "body parts"
         click(nameOfcategorie)
         functionsOnCards()
+        if (modeGame) {
+            for (let i = 0; i < categories.length; i++) {
+                if (nameOfcategorie === categories[i].categorie) {
+                    arrayOfWords.push(categories[i].name)
+                }
+            }
+            arrayOfWords.sort(makeRandomArr)
+            console.log(arrayOfWords)
+        }
     })
 
     linkColors.addEventListener('click', () => {
         nameOfcategorie = "colors"
         click(nameOfcategorie)
         functionsOnCards()
+        if (modeGame) {
+            for (let i = 0; i < categories.length; i++) {
+                if (nameOfcategorie === categories[i].categorie) {
+                    arrayOfWords.push(categories[i].name)
+                }
+            }
+            arrayOfWords.sort(makeRandomArr)
+            console.log(arrayOfWords)
+        }
     })
     linkFamily.addEventListener('click', () => {
         nameOfcategorie = "family"
         click(nameOfcategorie)
         functionsOnCards()
+        if (modeGame) {
+            for (let i = 0; i < categories.length; i++) {
+                if (nameOfcategorie === categories[i].categorie) {
+                    arrayOfWords.push(categories[i].name)
+                }
+            }
+            arrayOfWords.sort(makeRandomArr)
+            console.log(arrayOfWords)
+        }
     })
 
     linkMain.addEventListener('click', () => {
@@ -96,8 +169,8 @@ fetch('/categories.json').then(res => res.json()).then(list => {
                     linkToCateg = 'animal 2'
                 }
                 console.log(linkToCateg)
-
-                click(linkToCateg)
+                nameOfcategorie = linkToCateg
+                click(nameOfcategorie)
                 functionsOnCards()
 
             });
@@ -114,7 +187,8 @@ fetch('/categories.json').then(res => res.json()).then(list => {
             }
             console.log(linkToCateg)
 
-            click(linkToCateg)
+            nameOfcategorie = linkToCateg
+            click(nameOfcategorie)
             functionsOnCards()
 
         });
@@ -122,29 +196,58 @@ fetch('/categories.json').then(res => res.json()).then(list => {
     const arrayOfWords = []
     let index = 0
     modeSwitchButton.addEventListener('click', () => {
+
         if (!modeGame) {
-            createCardsForGame(categories, nameOfcategorie)
-            btnStart.innerHTML = 'Start game'
-            btnStart.className = 'button__start_game'
-            body.appendChild(btnStart)
+            console.log(nameOfcategorie)
+            if (nameOfcategorie === 'main') {
+                click(nameOfcategorie)
+                for (let i = 0; i < cards.length; i++) {
+                    cards[i].addEventListener('click', function() {
+
+                        let linkToCateg = cards[i].children[0].children[0].children[1].innerHTML.toLowerCase()
+
+                        if (linkToCateg === 'animal i') {
+                            linkToCateg = 'animal 1'
+                        } else if (linkToCateg === 'animal ii') {
+                            linkToCateg = 'animal 2'
+                        }
+                        console.log(linkToCateg)
+                        nameOfcategorie = linkToCateg
+                        click(nameOfcategorie)
+                        functionsOnCards()
+                        for (let i = 0; i < categories.length; i++) {
+                            if (nameOfcategorie === categories[i].categorie) {
+                                arrayOfWords.push(categories[i].name)
+                            }
+                        }
+                        arrayOfWords.sort(makeRandomArr)
+                        console.log(arrayOfWords)
+                    });
+                }
+            } else {
+                createCardsForGame(categories, nameOfcategorie)
+                btnStart.innerHTML = 'Start game'
+                btnStart.className = 'button__start_game'
+                body.appendChild(btnStart)
+                for (let i = 0; i < categories.length; i++) {
+                    if (nameOfcategorie === categories[i].categorie) {
+                        arrayOfWords.push(categories[i].name)
+                    }
+                }
+                arrayOfWords.sort(makeRandomArr)
+                console.log(arrayOfWords)
+            }
+
             modeGame = true
         } else if (modeGame) {
             console.log('aa')
-
-
+            modeGame = false
             click(nameOfcategorie)
             functionsOnCards()
             body.removeChild(btnStart)
-            modeGame = false
         }
-        for (let i = 0; i < categories.length; i++) {
-            if (nameOfcategorie === categories[i].categorie) {
 
-                arrayOfWords.push(categories[i].name)
-            }
-        }
-        arrayOfWords.sort(makeRandomArr)
-        console.log(arrayOfWords)
+
     })
 
     btnStart.addEventListener('click', () => {
@@ -189,16 +292,6 @@ fetch('/categories.json').then(res => res.json()).then(list => {
                         if (index === 8) {
 
                             setTimeout(() => {
-                                let audio = document.querySelector(`audio[data-key="sound_win"]`);
-                                console.log(audio)
-
-                                audio.currentTime = 0;
-                                audio.play();
-                                index = 0
-                                alert('игра окончена')
-                                wrapper.innerHTML = ''
-
-                                const image = document.createElement('img')
                                 let result
                                 console.log(errorAnswers);
                                 console.log(correctAnswers);
@@ -207,13 +300,60 @@ fetch('/categories.json').then(res => res.json()).then(list => {
                                 } else if (errorAnswers > 0) {
                                     result = 'loser'
                                 }
-                                image.src = `assets/images/${result}.gif`
+                                let audio = document.querySelector(`audio[data-key="sound_${result}"]`);
+                                console.log(audio)
+
+                                audio.currentTime = 0;
+                                audio.play();
+                                index = 0
+                                alert('игра окончена')
+                                wrapper.innerHTML = ''
+                                boxOfCards = document.createElement('div')
+                                boxOfCards.className = 'box_of_cards'
+                                const image = document.createElement('img')
+                                image.src = `assets/images/${result}.png`
                                 image.className = 'the__end'
-                                wrapper.appendChild(image)
+                                const negative = document.querySelector('.negative')
+                                const pozitive = document.querySelector('.pozitive')
+                                wrapper.appendChild(boxOfCards)
+                                main.removeChild(negative)
+                                main.removeChild(pozitive)
+                                boxOfCards.appendChild(image)
+                                main.removeChild(btnStart)
+
+
+
+
 
 
                                 correctAnswers = 0
                                 errorAnswers = 0
+
+                                setTimeout(() => {
+                                    nameOfcategorie = "main"
+                                    click(nameOfcategorie)
+
+                                    for (let i = 0; i < cards.length; i++) {
+                                        cards[i].addEventListener('click', function() {
+
+                                            let linkToCateg = cards[i].children[0].children[0].children[1].innerHTML.toLowerCase()
+
+                                            if (linkToCateg === 'animal i') {
+                                                linkToCateg = 'animal 1'
+                                            } else if (linkToCateg === 'animal ii') {
+                                                linkToCateg = 'animal 2'
+                                            }
+                                            console.log(linkToCateg)
+
+                                            click(linkToCateg)
+                                            functionsOnCards()
+
+                                        });
+                                    }
+                                }, 1000)
+
+
+
                             }, 2000);
 
 
@@ -264,12 +404,16 @@ function createCardsForGame(array, name) {
 }
 
 function createCategoriesOrWords(array, name) {
-    let arrayOfInfo = array
-    boxOfCards.innerHTML = ''
-    boxOfCards.innerHTML += createCategorieOrWord(arrayOfInfo, name)
+    if (modeGame) {
+        createCardsForGame(array, name)
+    } else {
+        let arrayOfInfo = array
+        boxOfCards.innerHTML = ''
+        boxOfCards.innerHTML += createCategorieOrWord(arrayOfInfo, name)
 
-    // @ts-ignore
-    cards = boxOfCards.children
+        // @ts-ignore
+        cards = boxOfCards.children
+    }
 }
 
 function createCards(array, name) {
@@ -345,40 +489,51 @@ function createCategorieOrWord(array, name) {
 
 function soundTurnOn(child) {
     let audio = document.querySelector(`audio[data-key="sound_${child}"]`);
+    console.log(audio);
     audio.currentTime = 0;
     audio.play();
 }
 
 function functionsOnCards() {
-    for (let i = 0; i < cards.length; i++) {
+    if (modeGame) {
+        createCardsForGame(categories, nameOfcategorie)
+        btnStart.innerHTML = 'Start game'
+        btnStart.className = 'button__start_game'
+        body.appendChild(btnStart)
+    } else {
+        for (let i = 0; i < cards.length; i++) {
 
 
-        let tap = cards[i].children[0].children[0]
-        let sound = cards[i].children[0].children[0].children[1].innerHTML
-        tap.children[0].addEventListener('click', () => soundTurnOn(sound))
-        tap.children[1].addEventListener('click', () => soundTurnOn(sound))
+            let tap = cards[i].children[0].children[0]
+            let sound = cards[i].children[0].children[0].children[1].innerHTML
+            tap.children[0].addEventListener('click', () => soundTurnOn(sound))
+            tap.children[1].addEventListener('click', () => soundTurnOn(sound))
 
 
+        }
+        const card = document.querySelectorAll('.translate')
+        console.log(card);
+        for (let i = 0; i < card.length; i++) {
+            card[i].addEventListener('click', function() {
+
+                let c = document.querySelectorAll('.card')
+                c[i].classList.toggle('is-flipped');
+
+            });
+        }
+
+        const car = document.querySelectorAll('.box_of_cards__card--back');
+        console.log(car)
+        for (let i = 0; i < car.length; i++) {
+            car[i].addEventListener('mouseleave', () => {
+                let c = document.querySelectorAll('.card')
+                c[i].classList.toggle('is-flipped');
+            })
+        }
     }
-    const card = document.querySelectorAll('.translate')
-    console.log(card);
-    for (let i = 0; i < card.length; i++) {
-        card[i].addEventListener('click', function() {
 
-            let c = document.querySelectorAll('.card')
-            c[i].classList.toggle('is-flipped');
 
-        });
-    }
 
-    const car = document.querySelectorAll('.box_of_cards__card--back');
-    console.log(car)
-    for (let i = 0; i < car.length; i++) {
-        car[i].addEventListener('mouseleave', () => {
-            let c = document.querySelectorAll('.card')
-            c[i].classList.toggle('is-flipped');
-        })
-    }
 }
 
 function makeRandomArr(a, b) {
