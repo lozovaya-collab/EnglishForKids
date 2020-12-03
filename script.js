@@ -6,7 +6,7 @@ const main = document.querySelector('.main')
 let boxOfCards = document.querySelector('.box_of_cards')
 let cards = document.querySelectorAll('.box_of_cards__card')
 const header = document.querySelector('.header')
-
+let translate = false
 let errorAnswers = 0
 let correctAnswers = 0
 let modeGame = false
@@ -575,8 +575,14 @@ function functionsOnCards() {
 
             let tap = cards[i].children[0].children[0]
             let sound = cards[i].children[0].children[0].children[1].innerHTML
-            tap.children[0].addEventListener('click', () => soundTurnOn(sound))
-            tap.children[1].addEventListener('click', () => soundTurnOn(sound))
+            tap.addEventListener('click', () => {
+                tap.children[2].addEventListener('click', () => {
+                    translate = true
+                })
+                if (translate === false) soundTurnOn(sound)
+                translate = false
+            })
+
 
 
         }
