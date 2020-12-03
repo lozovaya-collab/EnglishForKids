@@ -164,6 +164,9 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkMain.addEventListener('click', () => {
+        if (modeGame) {
+            main.removeChild(btnStart)
+        }
         nameOfcategorie = "main"
         click(nameOfcategorie)
         for (let i = 0; i < cards.length; i++) {
