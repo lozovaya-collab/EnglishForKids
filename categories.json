@@ -1,506 +1,794 @@
 [{
-        "categorie": "main",
+        "category": "main",
         "name": "Animal I",
         "translate": "",
         "img": "assets/images/animals_1.gif",
-        "sound": ""
+        "sound": "",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "main",
+        "category": "main",
         "name": "Animal II",
         "translate": "",
         "img": "assets/images/animals_2.gif",
-        "sound": ""
+        "sound": "",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "main",
+        "category": "main",
         "name": "Professions",
         "translate": "",
         "img": "assets/images/professions.gif",
-        "sound": ""
+        "sound": "",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "main",
+        "category": "main",
         "name": "Clothes",
         "translate": "",
         "img": "assets/images/clothes.gif",
-        "sound": ""
+        "sound": "",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "main",
+        "category": "main",
         "name": "Emotions",
         "translate": "",
         "img": "assets/images/emotions.gif",
-        "sound": ""
+        "sound": "",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "main",
+        "category": "main",
         "name": "Body parts",
         "translate": "",
         "img": "assets/images/body_parts.gif",
-        "sound": ""
+        "sound": "",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "main",
+        "category": "main",
         "name": "Colors",
         "translate": "",
         "img": "assets/images/colors.gif",
-        "sound": ""
+        "sound": "",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "main",
+        "category": "main",
         "name": "Family",
         "translate": "",
         "img": "assets/images/family.gif",
-        "sound": ""
+        "sound": "",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 1",
+        "category": "animal 1",
         "name": "lion",
         "translate": "лев",
         "img": "assets/images/lion.gif",
-        "sound": "https://dictionary.cambridge.org/media/english-russian/uk_pron/u/ukl/uklin/uklink_010.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english-russian/uk_pron/u/ukl/uklin/uklink_010.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 1",
+        "category": "animal 1",
         "name": "zebra",
         "translate": "зебра",
         "img": "assets/images/zebra.gif",
-        "sound": "https://dictionary.cambridge.org/media/english-russian/uk_pron/u/ukz/ukzea/ukzealo003.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english-russian/uk_pron/u/ukz/ukzea/ukzealo003.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 1",
+        "category": "animal 1",
         "name": "giraffe",
         "translate": "жираф",
         "img": "assets/images/giraffe.gif",
-        "sound": "https://dictionary.cambridge.org/media/english-russian/uk_pron/u/ukg/ukgir/ukgiraf001.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english-russian/uk_pron/u/ukg/ukgir/ukgiraf001.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 1",
+        "category": "animal 1",
         "name": "hippopotamus",
         "translate": "бегемот",
         "img": "assets/images/hippo.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukh/ukhim/ukhimal028.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukh/ukhim/ukhimal028.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 1",
+        "category": "animal 1",
         "name": "lemur",
         "translate": "лемур",
         "img": "assets/images/lemur.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukl/uklei/ukleisu007.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukl/uklei/ukleisu007.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 1",
+        "category": "animal 1",
         "name": "penguin",
         "translate": "пингвин",
         "img": "assets/images/penguin.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpen/ukpenet003.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpen/ukpenet003.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 1",
+        "category": "animal 1",
         "name": "monkey",
         "translate": "обезъяна",
         "img": "assets/images/monkey.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukm/ukmon/ukmonk_002.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukm/ukmon/ukmonk_002.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 1",
+        "category": "animal 1",
         "name": "tiger",
         "translate": "тигр",
         "img": "assets/images/tiger.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukt/uktic/uktickl024.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukt/uktic/uktickl024.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 2",
+        "category": "animal 2",
         "name": "rabbit",
         "translate": "кролик",
         "img": "assets/images/rabbit.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukr/ukrab/ukrabbi001.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukr/ukrab/ukrabbi001.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 2",
+        "category": "animal 2",
         "name": "fox",
         "translate": "лис",
         "img": "assets/images/fox.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukf/ukfou/ukfours005.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukf/ukfou/ukfours005.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 2",
+        "category": "animal 2",
         "name": "leopard",
         "translate": "леопард",
         "img": "assets/images/leopard.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukl/uklei/ukleisu025.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukl/uklei/ukleisu025.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 2",
+        "category": "animal 2",
         "name": "sloth",
         "translate": "ленивец",
         "img": "assets/images/sloth.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/ukslo/ukslobb019.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/ukslo/ukslobb019.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 2",
+        "category": "animal 2",
         "name": "wolf",
         "translate": "волк",
         "img": "assets/images/wolf.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukw/ukwit/ukwitte022.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukw/ukwit/ukwitte022.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 2",
+        "category": "animal 2",
         "name": "dog",
         "translate": "собака",
         "img": "assets/images/dog.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdoc/ukdocud022.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdoc/ukdocud022.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 2",
+        "category": "animal 2",
         "name": "cat",
         "translate": "кошка",
         "img": "assets/images/cat.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukc/ukcas/ukcaste011.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukc/ukcas/ukcaste011.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "animal 2",
+        "category": "animal 2",
         "name": "pig",
         "translate": "свинья",
         "img": "assets/images/pig.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpic/ukpictu020.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpic/ukpictu020.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
 
     {
-        "categorie": "professions",
+        "category": "professions",
         "name": "teacher",
         "translate": "учитель",
         "img": "assets/images/teacher.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukt/uktaw/uktawny023.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukt/uktaw/uktawny023.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "professions",
+        "category": "professions",
         "name": "doctor",
         "translate": "доктор",
         "img": "assets/images/doctor.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdiz/ukdizzi025.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdiz/ukdizzi025.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "professions",
+        "category": "professions",
         "name": "policeman",
         "translate": "полицейский",
         "img": "assets/images/policeman.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpol/ukpolar013.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpol/ukpolar013.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "professions",
+        "category": "professions",
         "name": "seller",
         "translate": "продавец",
         "img": "assets/images/seller.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukc/ukcel/ukceleb013.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukc/ukcel/ukceleb013.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "professions",
+        "category": "professions",
         "name": "cook",
         "translate": "повар",
         "img": "assets/images/cook.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukc/ukcon/ukconve028.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukc/ukcon/ukconve028.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "professions",
+        "category": "professions",
         "name": "scientist",
         "translate": "ученый",
         "img": "assets/images/scientist.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksch/ukschol024.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksch/ukschol024.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "professions",
+        "category": "professions",
         "name": "journalist",
         "translate": "журналист",
         "img": "assets/images/journalist.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukj/ukjol/ukjolli019.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukj/ukjol/ukjolli019.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "professions",
+        "category": "professions",
         "name": "writer",
         "translate": "писатель",
         "img": "assets/images/writer.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukw/ukwre/ukwreat027.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukw/ukwre/ukwreat027.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "clothes",
+        "category": "clothes",
         "name": "dress",
         "translate": "платье",
         "img": "assets/images/dress.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdre/ukdread025.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdre/ukdread025.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "clothes",
+        "category": "clothes",
         "name": "pullover",
         "translate": "свитер",
         "img": "assets/images/pullover.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpue/ukpueri018.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpue/ukpueri018.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "clothes",
+        "category": "clothes",
         "name": "cap",
         "translate": "кепка",
         "img": "assets/images/cap.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukc/ukcan/ukcant_015.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukc/ukcan/ukcant_015.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "clothes",
+        "category": "clothes",
         "name": "pajamas",
         "translate": "пижама",
         "img": "assets/images/pajamas.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpai/ukpaink016.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpai/ukpaink016.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "clothes",
+        "category": "clothes",
         "name": "skate",
         "translate": "конек",
         "img": "assets/images/skates.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksit/uksitua015.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksit/uksitua015.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "clothes",
+        "category": "clothes",
         "name": "sock",
         "translate": "носок",
         "img": "assets/images/socks.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksob/uksober023.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksob/uksober023.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "clothes",
+        "category": "clothes",
         "name": "shoe",
         "translate": "туфля",
         "img": "assets/images/shoes.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksho/ukshodd004.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksho/ukshodd004.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "clothes",
+        "category": "clothes",
         "name": "hat",
         "translate": "шляпа",
         "img": "assets/images/hat.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukh/ukhas/ukhasty002.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukh/ukhas/ukhasty002.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "emotions",
+        "category": "emotions",
         "name": "fear",
         "translate": "страх",
         "img": "assets/images/fear.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukf/ukfau/ukfault019.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukf/ukfau/ukfault019.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "emotions",
+        "category": "emotions",
         "name": "happy",
         "translate": "радость",
         "img": "assets/images/happy.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukh/ukhap/ukhapha010.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukh/ukhap/ukhapha010.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "emotions",
+        "category": "emotions",
         "name": "sad",
         "translate": "грусть",
         "img": "assets/images/sad.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksac/uksacri009.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksac/uksacri009.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "emotions",
+        "category": "emotions",
         "name": "angry",
         "translate": "злость",
         "img": "assets/images/angry.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uka/ukang/ukangel024.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uka/ukang/ukangel024.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "emotions",
+        "category": "emotions",
         "name": "disgust",
         "translate": "брезгливость",
         "img": "assets/images/disgust.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdis/ukdisgu003.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdis/ukdisgu003.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "emotions",
+        "category": "emotions",
         "name": "boredom",
         "translate": "скукота",
         "img": "assets/images/boredom.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukb/ukboo/ukboomi028.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukb/ukboo/ukboomi028.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "emotions",
+        "category": "emotions",
         "name": "greed",
         "translate": "жадность",
         "img": "assets/images/greed.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukg/ukgra/ukgravi020.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukg/ukgra/ukgravi020.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "emotions",
+        "category": "emotions",
         "name": "love",
         "translate": "влюбленность",
         "img": "assets/images/love.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukl/uklou/ukloudn014.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukl/uklou/ukloudn014.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "body parts",
+        "category": "body parts",
         "name": "head",
         "translate": "голова",
         "img": "assets/images/head.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukh/ukhea/ukhead_001.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukh/ukhea/ukhead_001.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "body parts",
+        "category": "body parts",
         "name": "leg",
         "translate": "нога",
         "img": "assets/images/legs.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukl/ukled/ukledge021.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukl/ukled/ukledge021.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "body parts",
+        "category": "body parts",
         "name": "hand",
         "translate": "рука",
         "img": "assets/images/hands.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukh/ukhal/ukhallw029.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukh/ukhal/ukhallw029.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "body parts",
+        "category": "body parts",
         "name": "eye",
         "translate": "глаза",
         "img": "assets/images/eyes.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uka/ukawe/ukawein027.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uka/ukawe/ukawein027.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "body parts",
+        "category": "body parts",
         "name": "ear",
         "translate": "ухо",
         "img": "assets/images/ears.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdyn/ukdynam018.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdyn/ukdynam018.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "body parts",
+        "category": "body parts",
         "name": "nose",
         "translate": "нос",
         "img": "assets/images/nose.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukn/uknoc/uknoctu011.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukn/uknoc/uknoctu011.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "body parts",
+        "category": "body parts",
         "name": "tongue",
         "translate": "язык",
         "img": "assets/images/tongue.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukt/ukton/uktoned006.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukt/ukton/uktoned006.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "body parts",
+        "category": "body parts",
         "name": "mouth",
         "translate": "рот",
         "img": "assets/images/mouth.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukm/ukmou/ukmourn011.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukm/ukmou/ukmourn011.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "colors",
+        "category": "colors",
         "name": "red",
         "translate": "красный",
         "img": "assets/images/red.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukr/ukray/ukrayon024.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukr/ukray/ukrayon024.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "colors",
+        "category": "colors",
         "name": "green",
         "translate": "зеленый",
         "img": "assets/images/green.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukg/ukgra/ukgravi025.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukg/ukgra/ukgravi025.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "colors",
+        "category": "colors",
         "name": "blue",
         "translate": "синий",
         "img": "assets/images/blue.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukb/ukble/ukbleep012.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukb/ukble/ukbleep012.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "colors",
+        "category": "colors",
         "name": "black",
         "translate": "черный",
         "img": "assets/images/black.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukb/ukbit/ukbitch026.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukb/ukbit/ukbitch026.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "colors",
+        "category": "colors",
         "name": "pink",
         "translate": "розовый",
         "img": "assets/images/pink.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpil/ukpilot027.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukp/ukpil/ukpilot027.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "colors",
+        "category": "colors",
         "name": "white",
         "translate": "белый",
         "img": "assets/images/white.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukw/ukwhi/ukwhisk009.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukw/ukwhi/ukwhisk009.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "colors",
+        "category": "colors",
         "name": "orange",
         "translate": "оранжевый",
         "img": "assets/images/orange.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uko/ukora/ukorang001.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uko/ukora/ukorang001.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "colors",
+        "category": "colors",
         "name": "yellow",
         "translate": "желтый",
         "img": "assets/images/yellow.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uky/ukyd_/ukyd___013.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uky/ukyd_/ukyd___013.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "family",
+        "category": "family",
         "name": "father",
         "translate": "папа",
         "img": "assets/images/father.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/c/cdo/cdo03/cdo0317fathuk4615.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/c/cdo/cdo03/cdo0317fathuk4615.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "family",
+        "category": "family",
         "name": "mother",
         "translate": "мама",
         "img": "assets/images/mother.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukm/ukmot/ukmothe001.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukm/ukmot/ukmothe001.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "family",
+        "category": "family",
         "name": "brother",
         "translate": "брат",
         "img": "assets/images/brother.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukb/ukbro/ukbroke027.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukb/ukbro/ukbroke027.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "family",
+        "category": "family",
         "name": "sister",
         "translate": "сестра",
         "img": "assets/images/sister.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksin/uksinle020.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uks/uksin/uksinle020.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "family",
+        "category": "family",
         "name": "grandfather",
         "translate": "дедушка",
         "img": "assets/images/grandfather.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukg/ukgra/ukgrand009.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukg/ukgra/ukgrand009.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "family",
+        "category": "family",
         "name": "grandmother",
         "translate": "бабушка",
         "img": "assets/images/grandmother.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukg/ukgra/ukgrand017.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukg/ukgra/ukgrand017.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "family",
+        "category": "family",
         "name": "aunt",
         "translate": "тетя",
         "img": "assets/images/aunt.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uka/ukarc/ukarchi017.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/uka/ukarc/ukarchi017.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     },
     {
-        "categorie": "family",
+        "category": "family",
         "name": "daughter",
         "translate": "дочь",
         "img": "assets/images/daughter.gif",
-        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdat/ukdatag007.mp3"
+        "sound": "https://dictionary.cambridge.org/media/english/uk_pron/u/ukd/ukdat/ukdatag007.mp3",
+        "correct": 0,
+        "error": 0,
+        "percent": 0,
+        "train": 0
     }
 ]

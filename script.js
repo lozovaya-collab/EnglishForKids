@@ -1,4 +1,13 @@
 let categories = []
+let difficultWords = []
+
+const btnReset = document.createElement('button')
+btnReset.innerHTML = 'Reset'
+btnReset.className = 'button__start_game'
+
+const btnDifficultWords = document.createElement('button')
+btnDifficultWords.innerHTML = 'Reapet difficult words'
+btnDifficultWords.className = 'button__start_game'
 
 let nameOfcategorie = 'main'
 const wrapper = document.querySelector('.wrapper')
@@ -30,21 +39,47 @@ const linkBodyParts = document.querySelector('.body_parts')
 const linkMain = document.querySelector('.main_page')
 const linkColors = document.querySelector('.colors')
 const linkFamily = document.querySelector('.family')
+const linkStatistics = document.querySelector('.statistics')
 
 fetch('./categories.json').then(res => res.json()).then(list => {
     categories = list
+    console.log(categories);
+    if (localStorage.getItem('difficultWords') !== null) {
+        difficultWords = JSON.parse(localStorage.getItem('difficultWords'))
+    } else {
+        localStorage.setItem('difficultWords', JSON.stringify(difficultWords))
+    }
 
+    if (localStorage.getItem('categories') !== null) {
+        categories = JSON.parse(localStorage.getItem('categories'))
+        console.log(categories);
+    } else {
+        localStorage.setItem('categories', JSON.stringify(categories))
+    }
+    console.log(categories);
     createCategoriesOrWords(categories, nameOfcategorie)
 
+    linkStatistics.addEventListener('click', () => {
+        if (localStorage.getItem('categories') !== null) {
+            categories = JSON.parse(localStorage.getItem('categories'))
+            console.log(categories);
+        }
+        createTableOfStatistics(categories)
+        console.log(difficultWords);
+    })
     linkAnimal1.addEventListener('click', () => {
+        if (localStorage.getItem('categories') !== null) {
+            categories = JSON.parse(localStorage.getItem('categories'))
+            console.log(categories);
+        }
         nameOfcategorie = "animal 1"
         click(nameOfcategorie)
 
-        functionsOnCards()
+        functionsOnCards(categories)
         if (modeGame) {
             arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
-                if (nameOfcategorie === categories[i].categorie) {
+                if (nameOfcategorie === categories[i].category) {
                     arrayOfWords.push(categories[i].name)
                 }
             }
@@ -53,13 +88,17 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         }
     })
     linkAnimal2.addEventListener('click', () => {
+        if (localStorage.getItem('categories') !== null) {
+            categories = JSON.parse(localStorage.getItem('categories'))
+            console.log(categories);
+        }
         nameOfcategorie = "animal 2"
         click(nameOfcategorie)
-        functionsOnCards()
+        functionsOnCards(categories)
         if (modeGame) {
             arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
-                if (nameOfcategorie === categories[i].categorie) {
+                if (nameOfcategorie === categories[i].category) {
                     arrayOfWords.push(categories[i].name)
                 }
             }
@@ -68,13 +107,17 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         }
     })
     linkProfessions.addEventListener('click', () => {
+        if (localStorage.getItem('categories') !== null) {
+            categories = JSON.parse(localStorage.getItem('categories'))
+            console.log(categories);
+        }
         nameOfcategorie = "professions"
         click(nameOfcategorie)
-        functionsOnCards()
+        functionsOnCards(categories)
         if (modeGame) {
             arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
-                if (nameOfcategorie === categories[i].categorie) {
+                if (nameOfcategorie === categories[i].category) {
                     arrayOfWords.push(categories[i].name)
                 }
             }
@@ -84,14 +127,17 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkClothes.addEventListener('click', () => {
-
+        if (localStorage.getItem('categories') !== null) {
+            categories = JSON.parse(localStorage.getItem('categories'))
+            console.log(categories);
+        }
         nameOfcategorie = "clothes"
         click(nameOfcategorie)
-        functionsOnCards()
+        functionsOnCards(categories)
         if (modeGame) {
             arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
-                if (nameOfcategorie === categories[i].categorie) {
+                if (nameOfcategorie === categories[i].category) {
                     arrayOfWords.push(categories[i].name)
                 }
             }
@@ -101,13 +147,17 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkEmotions.addEventListener('click', () => {
+        if (localStorage.getItem('categories') !== null) {
+            categories = JSON.parse(localStorage.getItem('categories'))
+            console.log(categories);
+        }
         nameOfcategorie = "emotions"
         click(nameOfcategorie)
-        functionsOnCards()
+        functionsOnCards(categories)
         if (modeGame) {
             arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
-                if (nameOfcategorie === categories[i].categorie) {
+                if (nameOfcategorie === categories[i].category) {
                     arrayOfWords.push(categories[i].name)
                 }
             }
@@ -117,13 +167,17 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkBodyParts.addEventListener('click', () => {
+        if (localStorage.getItem('categories') !== null) {
+            categories = JSON.parse(localStorage.getItem('categories'))
+            console.log(categories);
+        }
         nameOfcategorie = "body parts"
         click(nameOfcategorie)
-        functionsOnCards()
+        functionsOnCards(categories)
         if (modeGame) {
             arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
-                if (nameOfcategorie === categories[i].categorie) {
+                if (nameOfcategorie === categories[i].category) {
                     arrayOfWords.push(categories[i].name)
                 }
             }
@@ -133,13 +187,17 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkColors.addEventListener('click', () => {
+        if (localStorage.getItem('categories') !== null) {
+            categories = JSON.parse(localStorage.getItem('categories'))
+            console.log(categories);
+        }
         nameOfcategorie = "colors"
         click(nameOfcategorie)
-        functionsOnCards()
+        functionsOnCards(categories)
         if (modeGame) {
             arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
-                if (nameOfcategorie === categories[i].categorie) {
+                if (nameOfcategorie === categories[i].category) {
                     arrayOfWords.push(categories[i].name)
                 }
             }
@@ -148,13 +206,17 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         }
     })
     linkFamily.addEventListener('click', () => {
+        if (localStorage.getItem('categories') !== null) {
+            categories = JSON.parse(localStorage.getItem('categories'))
+            console.log(categories);
+        }
         nameOfcategorie = "family"
         click(nameOfcategorie)
-        functionsOnCards()
+        functionsOnCards(categories)
         if (modeGame) {
             arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
-                if (nameOfcategorie === categories[i].categorie) {
+                if (nameOfcategorie === categories[i].category) {
                     arrayOfWords.push(categories[i].name)
                 }
             }
@@ -164,6 +226,10 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkMain.addEventListener('click', () => {
+        if (localStorage.getItem('categories') !== null) {
+            categories = JSON.parse(localStorage.getItem('categories'))
+            console.log(categories);
+        }
         if (modeGame) {
             main.removeChild(btnStart)
         }
@@ -182,10 +248,10 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                 console.log(linkToCateg)
                 nameOfcategorie = linkToCateg
                 click(nameOfcategorie)
-                functionsOnCards()
+                functionsOnCards(categories)
                 arrayOfWords = []
                 for (let i = 0; i < categories.length; i++) {
-                    if (nameOfcategorie === categories[i].categorie) {
+                    if (nameOfcategorie === categories[i].category) {
                         arrayOfWords.push(categories[i].name)
                     }
                 }
@@ -207,10 +273,10 @@ fetch('./categories.json').then(res => res.json()).then(list => {
 
             nameOfcategorie = linkToCateg
             click(nameOfcategorie)
-            functionsOnCards()
+            functionsOnCards(categories)
             arrayOfWords = []
             for (let i = 0; i < categories.length; i++) {
-                if (nameOfcategorie === categories[i].categorie) {
+                if (nameOfcategorie === categories[i].category) {
                     arrayOfWords.push(categories[i].name)
                 }
             }
@@ -239,10 +305,10 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                         console.log(linkToCateg)
                         nameOfcategorie = linkToCateg
                         click(nameOfcategorie)
-                        functionsOnCards()
+                        functionsOnCards(categories)
                         arrayOfWords = []
                         for (let i = 0; i < categories.length; i++) {
-                            if (nameOfcategorie === categories[i].categorie) {
+                            if (nameOfcategorie === categories[i].category) {
                                 arrayOfWords.push(categories[i].name)
                             }
                         }
@@ -257,7 +323,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                 body.appendChild(btnStart)
                 arrayOfWords = []
                 for (let i = 0; i < categories.length; i++) {
-                    if (nameOfcategorie === categories[i].categorie) {
+                    if (nameOfcategorie === categories[i].category) {
                         arrayOfWords.push(categories[i].name)
                     }
                 }
@@ -286,10 +352,10 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                         console.log(linkToCateg)
                         nameOfcategorie = linkToCateg
                         click(nameOfcategorie)
-                        functionsOnCards()
+                        functionsOnCards(categories)
                         arrayOfWords = []
                         for (let i = 0; i < categories.length; i++) {
-                            if (nameOfcategorie === categories[i].categorie) {
+                            if (nameOfcategorie === categories[i].category) {
                                 arrayOfWords.push(categories[i].name)
                             }
                         }
@@ -299,10 +365,37 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                 }
             } else {
                 click(nameOfcategorie)
-                functionsOnCards()
+                functionsOnCards(categories)
             }
         }
 
+    })
+
+    btnReset.addEventListener('click', () => {
+        for (let obj of categories) {
+            obj.correct = 0
+            obj.percent = 0
+            obj.error = 0
+            obj.train = 0
+        }
+        localStorage.setItem('categories', JSON.stringify(categories))
+        createTableOfStatistics(categories)
+        difficultWords = []
+    })
+
+    btnDifficultWords.addEventListener('click', () => {
+        if (localStorage.getItem('difficultWords') !== null) {
+            difficultWords = JSON.parse(localStorage.getItem('difficultWords'))
+            console.log(difficultWords);
+        }
+        difficultWords.sort((prev, next) => next.percent - prev.percent);
+        console.log(difficultWords);
+        let mode = 'difficult'
+        wrapper.innerHTML = ''
+        wrapper.appendChild(boxOfCards)
+        wrapper.style.display = 'flex'
+        createCategoriesOrWords(difficultWords, mode)
+        functionsOnCards(difficultWords)
     })
 
     btnStart.addEventListener('click', () => {
@@ -329,7 +422,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                     let soundName = currentCard.children[1].dataset.key
                     console.log(index)
                     let str = `sound_${arrayOfWords[index]}`
-                    console.log(str)
+                    console.log(cards[i].children[0].children[0].children[0].src)
                     console.log(soundName)
 
                     if (soundName == `sound_${arrayOfWords[index]}`) {
@@ -343,6 +436,19 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                         star.className = 'fas fa-star'
                         const pozitivePanel = document.querySelector('.pozitive')
                         correctAnswers += 1
+                        for (let j = 0; j < categories.length; j++) {
+
+                            if (nameOfcategorie === categories[j].category) {
+
+                                if (soundName.replace("sound_", "") === categories[j].name) {
+                                    categories[j].correct += 1
+                                    console.log(categories[j].correct);
+                                }
+                            }
+
+
+                        }
+                        localStorage.setItem('categories', JSON.stringify(categories))
                         pozitivePanel.prepend(star)
                         audio.currentTime = 0;
 
@@ -351,6 +457,29 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                         index += 1
 
                         if (index === 8) {
+
+                            for (let j = 0; j < categories.length; j++) {
+
+                                if (nameOfcategorie === categories[j].category) {
+
+                                    let allAnswers = (categories[j].error + categories[j].correct)
+                                    let ratio = categories[j].error / allAnswers
+                                    categories[j].percent = Math.ceil(ratio * 100)
+
+                                    if (categories[j].percent > 0) {
+                                        let value = (difficultWords.find(obj => obj.name == categories[j].name) && true) || false
+                                        if (!value) {
+                                            difficultWords.push(categories[j])
+                                        } else {
+                                            difficultWords.find(obj => obj.name == categories[j].name).percent = categories[j].percent
+                                        }
+
+                                    }
+                                }
+                            }
+                            localStorage.setItem('categories', JSON.stringify(categories))
+                            console.log(difficultWords);
+                            localStorage.setItem('difficultWords', JSON.stringify(difficultWords))
 
                             setTimeout(() => {
                                 let result
@@ -407,10 +536,10 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                                             console.log(linkToCateg)
                                             nameOfcategorie = linkToCateg
                                             click(nameOfcategorie)
-                                            functionsOnCards()
+                                            functionsOnCards(categories)
                                             arrayOfWords = []
                                             for (let i = 0; i < categories.length; i++) {
-                                                if (nameOfcategorie === categories[i].categorie) {
+                                                if (nameOfcategorie === categories[i].category) {
                                                     arrayOfWords.push(categories[i].name)
                                                 }
                                             }
@@ -448,6 +577,23 @@ fetch('./categories.json').then(res => res.json()).then(list => {
                             console.log(audio)
                             audio.currentTime = 0;
                             audio.play();
+
+                            for (let j = 0; j < categories.length; j++) {
+
+                                if (nameOfcategorie === categories[j].category) {
+                                    console.log(`_${arrayOfWords[index]}_`);
+                                    console.log(categories[j].name);
+
+                                    if (arrayOfWords[index] === categories[j].name) {
+                                        console.log('qaaa');
+                                        categories[j].error += 1
+                                        console.log(categories[j].name, categories[j].error);
+                                    }
+                                }
+
+
+                            }
+                            localStorage.setItem('categories', JSON.stringify(categories))
                         }
 
                     }
@@ -462,6 +608,8 @@ fetch('./categories.json').then(res => res.json()).then(list => {
 
 
 function click(name) {
+    wrapper.innerHTML = ''
+    wrapper.appendChild(boxOfCards)
     boxOfCards.innerHTML = ''
 
     createCategoriesOrWords(categories, name)
@@ -480,9 +628,11 @@ function createCategoriesOrWords(array, name) {
         createCardsForGame(array, name)
     } else {
         let arrayOfInfo = array
+        console.log(boxOfCards);
+        wrapper.appendChild(boxOfCards)
         boxOfCards.innerHTML = ''
         boxOfCards.innerHTML += createCategorieOrWord(arrayOfInfo, name)
-
+        console.log(boxOfCards.innerHTML);
         // @ts-ignore
         cards = boxOfCards.children
     }
@@ -493,7 +643,7 @@ function createCards(array, name) {
     console.log(name)
     let str = ''
     for (let i = 0; i < array.length; i++) {
-        if (array[i].categorie == name && name === 'main') {
+        if (array[i].category == name && name === 'main') {
             str = str + `
             <div class="scene scene--card">
                 <div class="card">
@@ -503,7 +653,7 @@ function createCards(array, name) {
                     </div>
                 </div>
             </div>`
-        } else if (array[i].categorie == name) {
+        } else if (array[i].category == name || name === 'difficult') {
             str = str + `
             <div class="scene scene--card">
                 <div class="card">
@@ -524,9 +674,12 @@ function createCards(array, name) {
 
 function createCategorieOrWord(array, name) {
     let str = ''
+    console.log(array);
     for (let i = 0; i < array.length; i++) {
-        console.log(name);
-        if (array[i].categorie == name && name === 'main') {
+        console.log(array[0].category);
+
+        if (array[i].category == name && name === 'main') {
+            console.log(str);
             str = str + `
             <div class="scene scene--card">
                 <div class="card">
@@ -537,7 +690,8 @@ function createCategorieOrWord(array, name) {
                     </div>
                 </div>
             </div>`
-        } else if (array[i].categorie == name) {
+        } else if (array[i].category == name || name === 'difficult') {
+            console.log("туть");
             str = str + `
             <div class="scene scene--card">
                 <div class="card">
@@ -566,7 +720,7 @@ function soundTurnOn(child) {
     audio.play();
 }
 
-function functionsOnCards() {
+function functionsOnCards(array) {
     if (modeGame) {
         createCardsForGame(categories, nameOfcategorie)
         btnStart.innerHTML = 'Start game'
@@ -577,12 +731,25 @@ function functionsOnCards() {
 
 
             let tap = cards[i].children[0].children[0]
+            console.log(cards[i].children[0].children[0].children[1].innerHTML);
             let sound = cards[i].children[0].children[0].children[1].innerHTML
             tap.addEventListener('click', () => {
                 tap.children[2].addEventListener('click', () => {
                     translate = true
+
                 })
-                if (translate === false) soundTurnOn(sound)
+                if (translate === false) {
+                    soundTurnOn(sound)
+                    console.log(array);
+                    for (let i = 0; i < array.length; i++) {
+
+                        if (tap.children[1].innerHTML === array[i].name) {
+                            array[i].train += 1
+                        }
+                    }
+                    if (array.length === 72) localStorage.setItem('categories', JSON.stringify(array))
+
+                }
                 translate = false
             })
 
@@ -616,5 +783,68 @@ function functionsOnCards() {
 
 function makeRandomArr(a, b) {
     return Math.random() - 0.5;
+}
+
+function createTableOfStatistics(array) {
+    wrapper.innerHTML = ''
+    wrapper.style.display = 'block'
+
+    wrapper.innerHTML = createHeadOfTable(array)
+
+    const table = document.querySelectorAll('.table_statistics')
+    const arrayH2 = document.querySelectorAll('.headline')
+    console.log(table);
+    for (let i = 0; i < table.length; i++) {
+        console.log('add');
+        createRowInTable(arrayH2[i], table[i], categories)
+    }
+    wrapper.prepend(btnDifficultWords)
+    wrapper.prepend(btnReset)
+}
+
+function createHeadOfTable(array) {
+    console.log(array);
+    let str = ''
+    for (let i = 1; i < array.length; i++) {
+        if (array[i].category !== "main" && array[i].category !== array[i - 1].category) {
+            str += `
+            <h2 class="headline">${array[i].category.charAt(0).toUpperCase() + array[i].category.slice(1)}</h2>
+            <table class="table_statistics">
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Translation</th>
+                        <!-- Сколько раз кликнули и угадали-->
+                        <th>Correct</th>
+                        <th>Wrong</th>
+                        <th>% errors</th>
+                        <th>Train</th>
+                    </tr>
+        
+                </thead>
+            </table>`
+        }
+    }
+    return str
+}
+
+function createRowInTable(headline, table, array) {
+    for (let i = 0; i < array.length; i++) {
+
+        console.log(headline);
+        if (headline.innerHTML.toLowerCase() === array[i].category) {
+            const row = document.createElement('tr')
+
+            row.innerHTML = `
+                <td>${array[i].name}</td>
+                <td>${array[i].translate}</td>
+                <td>${array[i].correct}</td>
+                <td>${array[i].error}</td>
+                <td>${array[i].percent}</td>
+                <td>${array[i].train}</td>`
+
+            table.appendChild(row)
+        }
+    }
 }
 request.send()
