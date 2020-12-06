@@ -1,10 +1,11 @@
 let categories = []
 let difficultWords = []
-
+let statictics = false
 const btnReset = document.createElement('button')
 btnReset.innerHTML = 'Reset'
 btnReset.className = 'button__start_game'
 
+const PlayOrTrain = document.querySelector('.slider_span')
 const btnDifficultWords = document.createElement('button')
 btnDifficultWords.innerHTML = 'Reapet difficult words'
 btnDifficultWords.className = 'button__start_game'
@@ -15,10 +16,12 @@ const main = document.querySelector('.main')
 let boxOfCards = document.querySelector('.box_of_cards')
 let cards = document.querySelectorAll('.box_of_cards__card')
 const header = document.querySelector('.header')
-let translate = false
+let translate = true
 let errorAnswers = 0
 let correctAnswers = 0
 let modeGame = false
+
+let upPercent = false
 
 const btnStart = document.createElement('button')
 btnStart.className = 'button__start_game'
@@ -60,14 +63,16 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     createCategoriesOrWords(categories, nameOfcategorie)
 
     linkStatistics.addEventListener('click', () => {
+        statictics = true
         if (localStorage.getItem('categories') !== null) {
             categories = JSON.parse(localStorage.getItem('categories'))
             console.log(categories);
         }
         createTableOfStatistics(categories)
-        console.log(difficultWords);
+
     })
     linkAnimal1.addEventListener('click', () => {
+        statictics = false
         if (localStorage.getItem('categories') !== null) {
             categories = JSON.parse(localStorage.getItem('categories'))
             console.log(categories);
@@ -88,6 +93,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         }
     })
     linkAnimal2.addEventListener('click', () => {
+        statictics = false
         if (localStorage.getItem('categories') !== null) {
             categories = JSON.parse(localStorage.getItem('categories'))
             console.log(categories);
@@ -107,6 +113,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         }
     })
     linkProfessions.addEventListener('click', () => {
+        statictics = false
         if (localStorage.getItem('categories') !== null) {
             categories = JSON.parse(localStorage.getItem('categories'))
             console.log(categories);
@@ -127,6 +134,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkClothes.addEventListener('click', () => {
+        statictics = false
         if (localStorage.getItem('categories') !== null) {
             categories = JSON.parse(localStorage.getItem('categories'))
             console.log(categories);
@@ -147,6 +155,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkEmotions.addEventListener('click', () => {
+        statictics = false
         if (localStorage.getItem('categories') !== null) {
             categories = JSON.parse(localStorage.getItem('categories'))
             console.log(categories);
@@ -167,6 +176,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkBodyParts.addEventListener('click', () => {
+        statictics = false
         if (localStorage.getItem('categories') !== null) {
             categories = JSON.parse(localStorage.getItem('categories'))
             console.log(categories);
@@ -187,6 +197,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkColors.addEventListener('click', () => {
+        statictics = false
         if (localStorage.getItem('categories') !== null) {
             categories = JSON.parse(localStorage.getItem('categories'))
             console.log(categories);
@@ -206,6 +217,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         }
     })
     linkFamily.addEventListener('click', () => {
+        statictics = false
         if (localStorage.getItem('categories') !== null) {
             categories = JSON.parse(localStorage.getItem('categories'))
             console.log(categories);
@@ -226,6 +238,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     })
 
     linkMain.addEventListener('click', () => {
+        statictics = false
         if (localStorage.getItem('categories') !== null) {
             categories = JSON.parse(localStorage.getItem('categories'))
             console.log(categories);
@@ -261,6 +274,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         }
     })
     for (let i = 0; i < cards.length; i++) {
+        statictics = false
         cards[i].addEventListener('click', function() {
             let linkToCateg = cards[i].children[0].children[0].children[1].innerHTML.toLowerCase()
 
@@ -287,88 +301,102 @@ fetch('./categories.json').then(res => res.json()).then(list => {
     let arrayOfWords = []
     let index = 0
     modeSwitchButton.addEventListener('click', () => {
-
-        if (!modeGame) {
-            console.log(nameOfcategorie)
-            if (nameOfcategorie === 'main') {
-                click(nameOfcategorie)
-                for (let i = 0; i < cards.length; i++) {
-                    cards[i].addEventListener('click', function() {
-
-                        let linkToCateg = cards[i].children[0].children[0].children[1].innerHTML.toLowerCase()
-
-                        if (linkToCateg === 'animal i') {
-                            linkToCateg = 'animal 1'
-                        } else if (linkToCateg === 'animal ii') {
-                            linkToCateg = 'animal 2'
-                        }
-                        console.log(linkToCateg)
-                        nameOfcategorie = linkToCateg
-                        click(nameOfcategorie)
-                        functionsOnCards(categories)
-                        arrayOfWords = []
-                        for (let i = 0; i < categories.length; i++) {
-                            if (nameOfcategorie === categories[i].category) {
-                                arrayOfWords.push(categories[i].name)
-                            }
-                        }
-                        arrayOfWords.sort(makeRandomArr)
-                        console.log(arrayOfWords)
-                    });
-                }
+        if (statictics) {
+            createTableOfStatistics(categories)
+            if (modeGame) {
+                modeGame = false
+                PlayOrTrain.innerHTML = 'TRAIN'
+                PlayOrTrain.className = 'slider_span'
             } else {
-                createCardsForGame(categories, nameOfcategorie)
-                btnStart.innerHTML = 'Start game'
-                btnStart.className = 'button__start_game'
-                body.appendChild(btnStart)
-                arrayOfWords = []
-                for (let i = 0; i < categories.length; i++) {
-                    if (nameOfcategorie === categories[i].category) {
-                        arrayOfWords.push(categories[i].name)
-                    }
-                }
-                arrayOfWords.sort(makeRandomArr)
-                console.log(arrayOfWords)
+                modeGame = true
+                PlayOrTrain.innerHTML = 'PLAY'
+                PlayOrTrain.className = 'slider_span_play'
             }
+        } else {
+            if (!modeGame) {
+                console.log(nameOfcategorie)
+                if (nameOfcategorie === 'main') {
+                    click(nameOfcategorie)
+                    for (let i = 0; i < cards.length; i++) {
+                        cards[i].addEventListener('click', function() {
 
-            modeGame = true
-        } else if (modeGame) {
-            console.log('aa')
-            modeGame = false
+                            let linkToCateg = cards[i].children[0].children[0].children[1].innerHTML.toLowerCase()
 
-            body.removeChild(btnStart)
-            if (nameOfcategorie === 'main') {
-                click(nameOfcategorie)
-                for (let i = 0; i < cards.length; i++) {
-                    cards[i].addEventListener('click', function() {
-
-                        let linkToCateg = cards[i].children[0].children[0].children[1].innerHTML.toLowerCase()
-
-                        if (linkToCateg === 'animal i') {
-                            linkToCateg = 'animal 1'
-                        } else if (linkToCateg === 'animal ii') {
-                            linkToCateg = 'animal 2'
-                        }
-                        console.log(linkToCateg)
-                        nameOfcategorie = linkToCateg
-                        click(nameOfcategorie)
-                        functionsOnCards(categories)
-                        arrayOfWords = []
-                        for (let i = 0; i < categories.length; i++) {
-                            if (nameOfcategorie === categories[i].category) {
-                                arrayOfWords.push(categories[i].name)
+                            if (linkToCateg === 'animal i') {
+                                linkToCateg = 'animal 1'
+                            } else if (linkToCateg === 'animal ii') {
+                                linkToCateg = 'animal 2'
                             }
+                            console.log(linkToCateg)
+                            nameOfcategorie = linkToCateg
+                            click(nameOfcategorie)
+                            functionsOnCards(categories)
+                            arrayOfWords = []
+                            for (let i = 0; i < categories.length; i++) {
+                                if (nameOfcategorie === categories[i].category) {
+                                    arrayOfWords.push(categories[i].name)
+                                }
+                            }
+                            arrayOfWords.sort(makeRandomArr)
+                            console.log(arrayOfWords)
+                        });
+                    }
+                } else {
+                    createCardsForGame(categories, nameOfcategorie)
+                    btnStart.innerHTML = 'Start game'
+                    btnStart.className = 'button__start_game'
+                    body.appendChild(btnStart)
+                    arrayOfWords = []
+                    for (let i = 0; i < categories.length; i++) {
+                        if (nameOfcategorie === categories[i].category) {
+                            arrayOfWords.push(categories[i].name)
                         }
-                        arrayOfWords.sort(makeRandomArr)
-                        console.log(arrayOfWords)
-                    });
+                    }
+                    arrayOfWords.sort(makeRandomArr)
+                    console.log(arrayOfWords)
                 }
-            } else {
-                click(nameOfcategorie)
-                functionsOnCards(categories)
+
+                modeGame = true
+                PlayOrTrain.innerHTML = 'PLAY'
+                PlayOrTrain.className = 'slider_span_play'
+            } else if (modeGame) {
+                console.log('aa')
+                modeGame = false
+                PlayOrTrain.innerHTML = 'TRAIN'
+                PlayOrTrain.className = 'slider_span'
+                body.removeChild(btnStart)
+                if (nameOfcategorie === 'main') {
+                    click(nameOfcategorie)
+                    for (let i = 0; i < cards.length; i++) {
+                        cards[i].addEventListener('click', function() {
+
+                            let linkToCateg = cards[i].children[0].children[0].children[1].innerHTML.toLowerCase()
+
+                            if (linkToCateg === 'animal i') {
+                                linkToCateg = 'animal 1'
+                            } else if (linkToCateg === 'animal ii') {
+                                linkToCateg = 'animal 2'
+                            }
+                            console.log(linkToCateg)
+                            nameOfcategorie = linkToCateg
+                            click(nameOfcategorie)
+                            functionsOnCards(categories)
+                            arrayOfWords = []
+                            for (let i = 0; i < categories.length; i++) {
+                                if (nameOfcategorie === categories[i].category) {
+                                    arrayOfWords.push(categories[i].name)
+                                }
+                            }
+                            arrayOfWords.sort(makeRandomArr)
+                            console.log(arrayOfWords)
+                        });
+                    }
+                } else {
+                    click(nameOfcategorie)
+                    functionsOnCards(categories)
+                }
             }
         }
-
     })
 
     btnReset.addEventListener('click', () => {
@@ -390,15 +418,39 @@ fetch('./categories.json').then(res => res.json()).then(list => {
         }
         difficultWords.sort((prev, next) => next.percent - prev.percent);
         console.log(difficultWords);
+        if (difficultWords.length > 8) {
+            let elements = difficultWords.length - 8
+            difficultWords.splice(8, elements)
+        }
+        console.log(difficultWords);
         let mode = 'difficult'
         wrapper.innerHTML = ''
         wrapper.appendChild(boxOfCards)
         wrapper.style.display = 'flex'
-        createCategoriesOrWords(difficultWords, mode)
-        functionsOnCards(difficultWords)
+        console.log(modeGame);
+        if (!modeGame) {
+            createCategoriesOrWords(difficultWords, mode)
+            functionsOnCards(difficultWords)
+        } else {
+            arrayOfWords = []
+            for (let i = 0; i < difficultWords.length; i++) {
+
+                arrayOfWords.push(difficultWords[i].name)
+
+            }
+
+            arrayOfWords.sort(makeRandomArr)
+            console.log(arrayOfWords);
+            createCardsForGame(difficultWords, mode)
+            btnStart.innerHTML = 'Start game'
+            body.appendChild(btnStart)
+
+
+        }
     })
 
     btnStart.addEventListener('click', () => {
+
         const negPanel = document.createElement('div')
         const pozPanel = document.createElement('div')
         negPanel.className = 'negative'
@@ -456,7 +508,7 @@ fetch('./categories.json').then(res => res.json()).then(list => {
 
                         index += 1
 
-                        if (index === 8) {
+                        if (index === arrayOfWords.length) {
 
                             for (let j = 0; j < categories.length; j++) {
 
@@ -654,10 +706,11 @@ function createCards(array, name) {
                 </div>
             </div>`
         } else if (array[i].category == name || name === 'difficult') {
+            console.log(";ll");
             str = str + `
             <div class="scene scene--card">
                 <div class="card">
-                    <div class="box_of_cards__card box_of_cards__card--front">
+                    <div class="box_of_cards__card box_of_cards__card--front" style="height: 200px;">
                         <img class="card_image__for_game" alt="" src="${array[i].img}">
                         <audio data-key="sound_${array[i].name}" src="${array[i].sound}"></audio>
                     </div>
@@ -733,12 +786,12 @@ function functionsOnCards(array) {
             let tap = cards[i].children[0].children[0]
             console.log(cards[i].children[0].children[0].children[1].innerHTML);
             let sound = cards[i].children[0].children[0].children[1].innerHTML
-            tap.addEventListener('click', () => {
-                tap.children[2].addEventListener('click', () => {
-                    translate = true
+            tap.addEventListener('click', (e) => {
+                console.log(e.path.length);
 
-                })
-                if (translate === false) {
+
+
+                if (e.path[0].className !== "translate") {
                     soundTurnOn(sound)
                     console.log(array);
                     for (let i = 0; i < array.length; i++) {
@@ -748,9 +801,9 @@ function functionsOnCards(array) {
                         }
                     }
                     if (array.length === 72) localStorage.setItem('categories', JSON.stringify(array))
-
+                    translate = false
                 }
-                translate = false
+                console.log(e.path[0].className !== "translate");
             })
 
 
@@ -805,6 +858,7 @@ function createTableOfStatistics(array) {
 function createHeadOfTable(array) {
     console.log(array);
     let str = ''
+
     for (let i = 1; i < array.length; i++) {
         if (array[i].category !== "main" && array[i].category !== array[i - 1].category) {
             str += `
@@ -812,13 +866,13 @@ function createHeadOfTable(array) {
             <table class="table_statistics">
                 <thead>
                     <tr>
-                        <th>Word</th>
-                        <th>Translation</th>
+                        <th>Word <button class="sortWord">&#9675;</button></th>
+                        <th>Translation  <button class="sortTranslation">&#9675;</button></th>
                         <!-- Сколько раз кликнули и угадали-->
-                        <th>Correct</th>
-                        <th>Wrong</th>
-                        <th>% errors</th>
-                        <th>Train</th>
+                        <th>Correct  <button class="sortCorrect">&#9675;</button></th>
+                        <th>Wrong <button class="sortWrong">&#9675;</button></th>
+                        <th>% errors  <button class="sortPercent">&#9675;</button></th>
+                        <th>Train <button class="sortTrain">&#9675;</button></th>
                     </tr>
         
                 </thead>
@@ -831,7 +885,7 @@ function createHeadOfTable(array) {
 function createRowInTable(headline, table, array) {
     for (let i = 0; i < array.length; i++) {
 
-        console.log(headline);
+
         if (headline.innerHTML.toLowerCase() === array[i].category) {
             const row = document.createElement('tr')
 
